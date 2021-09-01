@@ -3,18 +3,26 @@ package module_gsh
 import "fmt"
 
 type Person struct {
-	Name string
-	Age  int
+	name string
+	age  int
 }
 
 func (p Person) SayHello() {
-	fmt.Println("Hello " + p.Name)
+	fmt.Println("Hello " + p.name)
+}
+
+func (p *Person) SetName(name string) {
+	p.name = name
+}
+
+func (p *Person) SetAge(age int) {
+	p.age = age
 }
 
 func (p Person) GetName() string {
-	return p.Name
+	return p.name
 }
 
 func (p Person) GetAge() int {
-	return p.Age
+	return p.age
 }
